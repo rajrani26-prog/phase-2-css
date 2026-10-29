@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --navy: #14213d;
+    --navy-light: #243b63;
+    --gold: #d4af65;
+    --gold-light: #f4e8c8;
+    --cream: #f7f5ef;
+    --white: #ffffff;
+    --text: #273247;
+    --border: #e4e0d6;
+    --shadow: 0 8px 25px rgba(20, 33, 61, 0.09);
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--cream);
+}
+header {
+    padding: 42px 20px;
+    text-align: center;
+    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        var(--navy),
+        var(--navy-light)
+    );
+    border-bottom: 4px solid var(--gold);
+}
+header h1 {
+    color: var(--white);
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+header p {
+    color: var(--gold-light);
+    margin: 0;
+}
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 3px 12px rgba(20, 33, 61, 0.06);
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 12px 16px;
+}
+nav a {
+    display: block;
+    padding: 9px 15px;
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.25s ease;
+}
+nav a:hover,
+nav a:focus-visible {
+    color: var(--white);
+    background: var(--navy);
+}
+main {
+    width: min(1100px, 92%);
+    flex: 1;
+    margin: 36px auto;
+    padding: clamp(20px, 4vw, 38px);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+h2 {
+    color: var(--navy);
+    font-size: 1.6rem;
+    line-height: 1.4;
+    margin: 26px 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold-light);
+}
+
+main > h2:first-child {
+    margin-top: 0;
+}
+
+h3 {
+    color: var(--navy-light);
+    font-size: 1.2rem;
+    margin: 18px 0 10px;
+}
+
+p {
+    margin: 12px 0;
+}
+
+strong {
+    color: var(--navy);
+}
+
+main a {
+    color: #87651e;
+    font-weight: 600;
+    text-underline-offset: 4px;
+}
+
+main a:hover {
+    color: var(--navy-light);
+}
+
+main ul,
+main ol {
+    margin: 14px 0 22px;
+    padding-left: 28px;
+}
+
+main li {
+    padding: 5px 0;
+}
+
+main li::marker {
+    color: var(--gold);
+}
+
+
+main section {
+    margin: 22px 0;
+    padding: 22px 24px;
+    background: #fffdf8;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    border-radius: 12px;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+main section:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+main section h2:first-child,
+main section h3:first-child {
+    margin-top: 0;
+}
+
+/* 9. Images */
+
+main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 18px auto;
+    border-radius: 14px;
+}
+
+main img[alt*="profile"],
+main img[alt*="Profile"] {
+    width: min(220px, 100%);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 4px solid var(--gold-light);
+    box-shadow: var(--shadow);
+}
+
+/* 10. Forms */
+
+form {
+    margin: 22px 0;
+}
+
+fieldset {
+    min-width: 0;
+    margin-bottom: 22px;
+    padding: 22px;
+    background: #fffdf9;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+legend {
+    padding: 0 9px;
+    color: var(--navy);
+    font-weight: 700;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: var(--navy);
+    font-weight: 600;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+    max-width: 100%;
+    padding: 11px 13px;
+    color: var(--text);
+    background: var(--white);
+    border: 1px solid #cbd1dc;
+    border-radius: 8px;
+    font: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--navy);
+    margin-right: 6px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(212, 175, 101, 0.4);
+    border-color: var(--gold);
+}
+
+/* 11. Buttons */
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    margin: 8px 8px 0 0;
+    padding: 11px 20px;
+    color: var(--white);
+    background: var(--navy);
+    border: 1px solid var(--navy);
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background: var(--navy-light);
+    transform: translateY(-1px);
+}
+
+/* 12. Grades and other tables */
+
+table {
+    width: 100%;
+    margin: 22px 0;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+caption {
+    padding: 12px;
+    color: var(--navy);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+th,
+td {
+    padding: 13px 15px;
+    text-align: left;
+    border: 1px solid var(--border);
+}
+
+thead th {
+    color: var(--white);
+    background: var(--navy);
+}
+
+tbody tr:nth-child(even) {
+    background: #faf8f2;
+}
+
+tbody tr:hover {
+    background: var(--gold-light);
+}
+
+/* 13. Horizontal line */
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 25px auto;
+}
+
+/* 14. Footer */
+
+footer {
+    margin-top: auto;
+    padding: 26px 20px;
+    text-align: center;
+    color: var(--white);
+    background: var(--navy);
+    border-top: 4px solid var(--gold);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: var(--gold-light);
+}
+
+/* 15. Responsive design for mobile */
+
+@media (max-width: 700px) {
+    header {
+        padding: 30px 16px;
+    }
+
+    nav {
+        position: static;
+    }
+
+    nav ul {
+        gap: 4px;
+        padding: 10px;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 0.92rem;
+    }
+
+    main {
+        width: 94%;
+        margin: 22px auto;
+        padding: 20px 16px;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    main section,
+    fieldset {
+        padding: 16px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        overflow-wrap: anywhere;
+    }
+
+    footer {
+        padding: 22px 14px;
+    }
+}
+
+/* 16. Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto;
+        transition: none;
+        animation: none;
+    }
+}
